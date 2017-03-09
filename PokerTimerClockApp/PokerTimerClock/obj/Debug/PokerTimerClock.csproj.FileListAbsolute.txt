@@ -12,3 +12,17 @@ C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTime
 C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.csproj.GenerateResource.Cache
 C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.exe
 C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.pdb
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\bin\Debug\PokerTimerClock.exe.config
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.exe
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.pdb
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\bin\Debug\PokerTimerClock.exe
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\bin\Debug\PokerTimerClock.pdb
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.csprojResolveAssemblyReference.cache
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\MainWindow.g.cs
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\App.g.cs
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock_MarkupCompile.cache
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock_MarkupCompile.lref
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\MainWindow.baml
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.g.resources
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.Properties.Resources.resources
+C:\Users\omar.soto\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.csproj.GenerateResource.Cache
