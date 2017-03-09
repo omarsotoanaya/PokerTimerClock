@@ -23,10 +23,12 @@ namespace PokerTimerClock
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        TimeSpan time = TimeSpan.Parse("20:00:00");
 
         public MainWindow()
         {
             InitializeComponent();
+            lblClock.Content = time.ToString();
         }
  
         private void button_Click(object sender, RoutedEventArgs e)
@@ -40,16 +42,25 @@ namespace PokerTimerClock
             else
             {
                 timer.Start();
-                btnStart.Content = "Stop";
+                btnStart.Content = "Stop";               
             }
 
+            timer.Interval = new TimeSpan(TimeSpan.TicksPerMillisecond);
             timer.Tick += (s, a) =>
             {
-                var hours = DateTime.Now.Hour;
-                var minutes = DateTime.Now.Minute;
-                var seconds = DateTime.Now.Second;
+                //var hours = DateTime.Now.Hour;
+                //var minutes = DateTime.Now.Minute;
+                //var seconds = DateTime.Now.Second;
 
-                var clocktext = string.Format("{0}:{1}:{2}", hours, minutes, seconds);
+                //var clocktext = string.Format("{0}:{1}:{2}", hours, minutes, seconds);
+                time = time.Subtract(new TimeSpan(0, 0, 1));
+
+                var clocktext = time.ToString();
+
+                if(time.TotalMinutes.Equals(0) && time.TotalSeconds.Equals(0))
+                {
+                    timer.Stop();
+                }
 
                 lblClock.Content = clocktext;
 
