@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Threading;
+using System.Timers;
 
 namespace PokerTimerClock
 {
@@ -22,50 +23,61 @@ namespace PokerTimerClock
     /// </summary>
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer = new DispatcherTimer();
-        TimeSpan time = TimeSpan.Parse("20:00:00");
+        private TimeSpan _time = TimeSpan.Parse("00:11:05");
+        private DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
-            lblClock.Content = time.ToString();
+            
+            // Draw the Clock.
+            lblClock.Content = _time.ToString();
+
+            // Set the interval and the tick.
+            _timer.Interval = new TimeSpan(TimeSpan.TicksPerSecond);
+            _timer.Tick += (s, a) =>
+            {
+                // Substract a second.
+                _time = _time.Subtract(new TimeSpan(0, 0, 1));
+
+                var clocktext = _time.ToString("mm':'ss");
+
+                if(_time.Minutes.Equals(10))
+                {
+                    lblClock.Foreground = Brushes.Yellow;
+                }
+                if (_time.TotalMinutes.Equals(0) && _time.TotalSeconds.Equals(0))
+                {
+                    _timer.Stop();
+                }
+
+                // Show the current time.
+                lblClock.Content = clocktext;
+            };
         }
- 
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
-                      
-            if(timer.IsEnabled)
+            // Call the timer.
+            Timer_Ticks();
+
+        }
+
+        private void Timer_Ticks()
+        {
+
+            if (_timer.IsEnabled)
             {
-                timer.Stop();
+                _timer.Stop();
                 btnStart.Content = "Start";
             }
             else
             {
-                timer.Start();
-                btnStart.Content = "Stop";               
+                _timer.Start();
+                btnStart.Content = "Stop";
             }
 
-            timer.Interval = new TimeSpan(TimeSpan.TicksPerMillisecond);
-            timer.Tick += (s, a) =>
-            {
-                //var hours = DateTime.Now.Hour;
-                //var minutes = DateTime.Now.Minute;
-                //var seconds = DateTime.Now.Second;
-
-                //var clocktext = string.Format("{0}:{1}:{2}", hours, minutes, seconds);
-                time = time.Subtract(new TimeSpan(0, 0, 1));
-
-                var clocktext = time.ToString();
-
-                if(time.TotalMinutes.Equals(0) && time.TotalSeconds.Equals(0))
-                {
-                    timer.Stop();
-                }
-
-                lblClock.Content = clocktext;
-
-            };
-
         }
+
     }
 }
