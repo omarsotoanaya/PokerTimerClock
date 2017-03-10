@@ -23,7 +23,7 @@ namespace PokerTimerClock
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TimeSpan _time = TimeSpan.Parse("00:11:05");
+        private TimeSpan _time = TimeSpan.Parse("00:20:00");
         private DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
@@ -31,7 +31,7 @@ namespace PokerTimerClock
             InitializeComponent();
             
             // Draw the Clock.
-            lblClock.Content = _time.ToString();
+            lblClock.Content = _time.ToString("mm':'ss");
 
             // Set the interval and the tick.
             _timer.Interval = new TimeSpan(TimeSpan.TicksPerSecond);
