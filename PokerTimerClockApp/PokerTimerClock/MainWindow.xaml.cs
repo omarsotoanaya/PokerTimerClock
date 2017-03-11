@@ -29,9 +29,10 @@ namespace PokerTimerClock
         public MainWindow()
         {
             InitializeComponent();
+            XmlReadConfig Xmlread = new XmlReadConfig();
             
             // Draw the Clock.
-            lblClock.Content = _time.ToString("mm':'ss");
+            lblClock.Content = Xmlread.ReadXml();
 
             // Set the interval and the tick.
             _timer.Interval = new TimeSpan(TimeSpan.TicksPerSecond);
@@ -59,8 +60,7 @@ namespace PokerTimerClock
         private void button_Click(object sender, RoutedEventArgs e)
         {
             // Call the timer.
-            Timer_Ticks();
-
+            Timer_Ticks();  
         }
 
         private void Timer_Ticks()
