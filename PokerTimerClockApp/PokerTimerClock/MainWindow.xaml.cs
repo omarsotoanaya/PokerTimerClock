@@ -23,16 +23,19 @@ namespace PokerTimerClock
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TimeSpan _time = TimeSpan.Parse("00:20:00");
+        private TimeSpan _time;
         private DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
-            XmlReadConfig Xmlread = new XmlReadConfig();
-            
+            Round round = new Round();
+
+            _time = round.GetRoundData().RoundTime;
+            string clocktext = string.Format("{0:00}:{1:00}", _time.Minutes, _time.Seconds);
+
             // Draw the Clock.
-            lblClock.Content = Xmlread.ReadXml();
+            lblClock.Content = clocktext;
 
             // Set the interval and the tick.
             _timer.Interval = new TimeSpan(TimeSpan.TicksPerSecond);
@@ -41,7 +44,7 @@ namespace PokerTimerClock
                 // Substract a second.
                 _time = _time.Subtract(new TimeSpan(0, 0, 1));
 
-                var clocktext = _time.ToString("mm':'ss");
+                clocktext = _time.ToString("mm':'ss");
 
                 if(_time.Minutes.Equals(10))
                 {

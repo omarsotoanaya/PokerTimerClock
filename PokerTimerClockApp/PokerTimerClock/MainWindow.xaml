@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokerTimerClock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="725" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" WindowStyle="None" ResizeMode="CanResizeWithGrip">
+        Title="MainWindow" Height="500" Width="725" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" ResizeMode="CanResizeWithGrip">
     <Grid Margin="0,-28,0,-3" >
         <Grid HorizontalAlignment="Left" Width="717">
             <Grid Focusable="True" IsHitTestVisible="True" IsManipulationEnabled="True" RenderTransformOrigin="0.481,0.317" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="523" VerticalAlignment="Bottom" >
