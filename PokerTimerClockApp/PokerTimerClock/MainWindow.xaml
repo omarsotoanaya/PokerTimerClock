@@ -5,22 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokerTimerClock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="725" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" ResizeMode="CanResizeWithGrip">
-    <Grid Margin="0,-28,0,-3" >
-        <Grid HorizontalAlignment="Left" Width="717">
-            <Grid Focusable="True" IsHitTestVisible="True" IsManipulationEnabled="True" RenderTransformOrigin="0.481,0.317" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="523" VerticalAlignment="Bottom" >
-                <Grid.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Grid.RenderTransform>
-                <Label x:Name="lblClock" Content="..." HorizontalAlignment="Left" Margin="214,155,0,0" VerticalAlignment="Top" Width="310" FontSize="48" FontWeight="Bold" FontFamily="Tahoma" HorizontalContentAlignment="Center"/>
-                <Button x:Name="btnStart" Content="Start Clock" HorizontalAlignment="Left" Margin="313,0,0,157" VerticalAlignment="Bottom" Click="button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="114" Height="39"/>
-
-            </Grid>
-        </Grid>
+        Title="MainWindow" Height="514.865" Width="593.07" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MinWidth="500" MinHeight="450">
+    <Grid Margin="0,0,2,-5" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="168*"/>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="163*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*" />
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="126*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblClock" Content="..." FontSize="48" FontWeight="Bold" FontFamily="Tahoma" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="1" Margin="10,4,10,0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="192" VerticalAlignment="Top"/>
+        <Button x:Name="btnStart" Content="Start Clock" Margin="27,4,32,0" Click="button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="100" MinHeight="48" Grid.Row="3" Grid.Column="1" TextOptions.TextHintingMode="Fixed" HorizontalAlignment="Center" Width="153" VerticalAlignment="Top"/>
     </Grid>
 </Window>

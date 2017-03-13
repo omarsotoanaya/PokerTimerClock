@@ -29,46 +29,21 @@ namespace PokerTimerClock
         public MainWindow()
         {
             InitializeComponent();
-            Round round = new Round();
 
-            _time = round.GetRoundData().RoundTime;
-            string clocktext = string.Format("{0:00}:{1:00}", _time.Minutes, _time.Seconds);
-
-            // Draw the Clock.
-            lblClock.Content = clocktext;
-
-            // Set the interval and the tick.
-            _timer.Interval = new TimeSpan(TimeSpan.TicksPerSecond);
-            _timer.Tick += (s, a) =>
-            {
-                // Substract a second.
-                _time = _time.Subtract(new TimeSpan(0, 0, 1));
-
-                clocktext = _time.ToString("mm':'ss");
-
-                if(_time.Minutes.Equals(10))
-                {
-                    lblClock.Foreground = Brushes.Yellow;
-                }
-                if (_time.TotalMinutes.Equals(0) && _time.TotalSeconds.Equals(0))
-                {
-                    _timer.Stop();
-                }
-
-                // Show the current time.
-                lblClock.Content = clocktext;
-            };
+            // Get the timer ticks.
+            TimerTicks();
+           
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            // Call the timer.
-            Timer_Ticks();  
+            // Verify if the clock is running.
+            TimerStatus();  
         }
 
-        private void Timer_Ticks()
+        private void TimerStatus()
         {
-
+            // Verify if the timer is running to stablish the buttons Labels.
             if (_timer.IsEnabled)
             {
                 _timer.Stop();
@@ -80,6 +55,40 @@ namespace PokerTimerClock
                 btnStart.Content = "Stop";
             }
 
+        }
+
+        private void TimerTicks()
+        {
+            // Initialize round.
+            Round round = new Round();
+
+            _time = round.GetRoundData().RoundTime;
+            string clocktext = string.Format("{0:00}:{1:00}", _time.Minutes, _time.Seconds);
+
+            // Set the First Time Clock.
+            lblClock.Content = clocktext;
+
+            // Set the interval and the tick.
+            _timer.Interval = new TimeSpan(TimeSpan.TicksPerSecond);
+            _timer.Tick += (s, a) =>
+            {
+                // Substract a second.
+                _time = _time.Subtract(new TimeSpan(0, 0, 1));
+
+                clocktext = _time.ToString("mm':'ss");
+
+                if (_time.Minutes.Equals(10))
+                {
+                    lblClock.Foreground = Brushes.Yellow;
+                }
+                if (_time.TotalMinutes.Equals(0) && _time.TotalSeconds.Equals(0))
+                {
+                    _timer.Stop();
+                }
+
+                // Draw the current time.
+                lblClock.Content = clocktext;
+            };
         }
 
     }
