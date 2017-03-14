@@ -5,21 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokerTimerClock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="514.865" Width="593.07" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MinWidth="500" MinHeight="450">
+        Title="MainWindow" Height="817.482" Width="1184.725" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MinWidth="500" MinHeight="450" WindowState="Maximized">
     <Grid Margin="0,0,2,-5" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="168*"/>
-            <ColumnDefinition Width="212*"/>
-            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="421*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="56*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="124*" />
-            <RowDefinition Height="79*"/>
-            <RowDefinition Height="99*"/>
-            <RowDefinition Height="63*"/>
-            <RowDefinition Height="126*"/>
+            <RowDefinition Height="68*" />
+            <RowDefinition Height="304*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="281*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="lblClock" Content="..." FontSize="48" FontWeight="Bold" FontFamily="Tahoma" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="1" Margin="10,4,10,0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="192" VerticalAlignment="Top"/>
-        <Button x:Name="btnStart" Content="Start Clock" Margin="27,4,32,0" Click="button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="100" MinHeight="48" Grid.Row="3" Grid.Column="1" TextOptions.TextHintingMode="Fixed" HorizontalAlignment="Center" Width="153" VerticalAlignment="Top"/>
+        <Label x:Name="lblClock" Content="..." FontSize="96" FontWeight="Bold" FontFamily="Tahoma" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="1" Margin="3,4,0,0" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Width="418" VerticalAlignment="Top" Height="201"/>
+        <Button x:Name="btnStart" Content="Start Clock" Margin="130,98,137,0" Click="button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="100" MinHeight="48" Grid.Row="4" Grid.Column="4" TextOptions.TextHintingMode="Fixed" HorizontalAlignment="Center" Width="154" VerticalAlignment="Top" Height="48"/>
+        <Label x:Name="lblSmall" Content="Small Blind" RenderTransformOrigin="2.651,4.67" Grid.Column="1" Margin="0,10,27,2" Grid.Row="2" FontSize="26.667" FontFamily="Tahoma" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblBig" Content="Big Blind" Grid.Column="6" Margin="14,10,13,2" Grid.Row="2" FontSize="26.667" FontFamily="Tahoma" FontWeight="Bold"/>
+        <Label x:Name="lblSmallBlind" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="10,15,0,0" Grid.Row="3" Width="55" FontFamily="Tahoma" FontSize="26.667" FontWeight="Bold" Height="58" VerticalAlignment="Top"/>
+        <Label x:Name="lblBigBlind" Content="..." Grid.Column="6" Margin="57,15,0,0" Grid.Row="3" VerticalAlignment="Top" Height="47" FontFamily="Tahoma" FontSize="26.667" FontWeight="Bold" HorizontalAlignment="Left" Width="53"/>
+        <Label x:Name="lblNextRound" Content="..." Grid.Column="7" HorizontalAlignment="Left" Margin="60,41,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+        <Label x:Name="lblNextSmall" Content="..." Grid.Column="7" HorizontalAlignment="Left" Margin="60,117,0,0" Grid.Row="4" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma"/>
+        <Label x:Name="lblNextBigBlind" Content="..." Grid.Column="7" HorizontalAlignment="Left" Margin="62,187,0,0" Grid.Row="4" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma"/>
+        <Label x:Name="lblSiguienteRonda" Content="Siguiente Ronda" Grid.Column="7" HorizontalAlignment="Left" Margin="18,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontFamily="Tahoma" Height="26"/>
+        <Label x:Name="lblNextSmallTxt" Content="Small Blind" Grid.Column="7" HorizontalAlignment="Left" Margin="30,78,0,0" Grid.Row="4" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma"/>
+        <Label x:Name="lblNextBigTxt" Content="Big Blind" Grid.Column="7" HorizontalAlignment="Left" Margin="38,152,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Width="78"/>
     </Grid>
 </Window>
