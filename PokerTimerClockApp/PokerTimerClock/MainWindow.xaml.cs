@@ -93,8 +93,16 @@ namespace PokerTimerClock
             {
                 lblSmallBlind.Content = _conf.Blinds[count].SmallBlind;
                 lblBigBlind.Content = _conf.Blinds[count].BigBlind;
-                lblNextRound.Content = _conf.Blinds[count].Ante;
+                lblAnte.Content = _conf.Blinds[count].Ante ?? string.Empty;
                 count++;
+            }
+            // Get Next Round Info.
+            if(_conf.Blinds.Count() > count)
+            {  
+                lblNextSmall.Content = _conf.Blinds[count].SmallBlind;
+                lblNextBigBlind.Content = _conf.Blinds[count].BigBlind;
+                lblNextRound.Content = count+1;
+                lblNextAnte.Content = _conf.Blinds[count].Ante ?? string.Empty;
             }
 
         }
