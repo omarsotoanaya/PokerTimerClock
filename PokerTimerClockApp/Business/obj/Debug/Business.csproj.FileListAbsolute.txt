@@ -1,0 +1,5 @@
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\Business\bin\Debug\Business.dll
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\Business\bin\Debug\Business.pdb
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\Business\obj\Debug\Business.dll
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\Business\obj\Debug\Business.pdb

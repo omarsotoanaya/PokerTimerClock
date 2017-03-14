@@ -40,3 +40,7 @@ C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\PokerTime
 C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.Properties.Resources.resources
 C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.csproj.GenerateResource.Cache
 C:\Users\omar.soto\Documents\GitHub\pokertimerclock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock.csprojResolveAssemblyReference.cache
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\bin\Debug\Business.dll
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\bin\Debug\Business.pdb
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\bin\Debug\XmlTimerConfig.xml
+C:\Users\omar.soto\Documents\GitHub\PokerTimerClock\PokerTimerClockApp\PokerTimerClock\obj\Debug\PokerTimerClock_Content.g.cs
