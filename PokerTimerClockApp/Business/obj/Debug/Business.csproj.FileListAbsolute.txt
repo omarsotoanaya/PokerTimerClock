@@ -6,3 +6,4 @@ C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\Business\
 C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\Business\bin\Debug\Business.pdb
 C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\Business\obj\Debug\Business.dll
 C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\Business\obj\Debug\Business.pdb
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache

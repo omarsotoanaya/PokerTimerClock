@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.Windows.Threading;
 using System.Timers;
 using Business;
+using System.Data;
 
 namespace PokerTimerClock
 {
@@ -29,7 +30,8 @@ namespace PokerTimerClock
         private int currentRound = 0;
         private Configuration _conf;
         private int count = 0;
-
+        private int vato;
+   
         public MainWindow()
         {
             InitializeComponent();
@@ -136,25 +138,40 @@ namespace PokerTimerClock
 
         }
 
-        private void lblPlus_Click(object sender, RoutedEventArgs e)
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
-            var plus = 20;
-            var total = 50;
-
-            List<int> milista = new List<int>();
-            for(int plus1 = 1; plus1 < plus; plus1++)
+            var load = LoadPremios();
+            if(load.Count()>0)
             {
-                total = (total*plus1) / 2;
-                var money = Math.Round(total / 100d)*100;
-                milista.Add((int)money);
-
-            }
-
-            foreach(var t in milista)
-            {
-
+                dataGrid.ItemsSource = load;
             }
             
+        }
+
+        private List<Premios> LoadPremios()
+        {
+            vato = vato + 1;
+            var premios = new List<Premios>();
+            int x = 0;
+            int entrance = 50;
+            int total = vato * entrance;
+
+            while (total >= 100)
+            {
+                var premio = new Premios();
+                total = total / 2;
+                if (total >= 100)
+                {
+                    x++;
+                    total = (int)(Math.Round(total / 100d) * 100);
+                    premio.Lugar = x;
+                    premio.Cantidad = total;
+                    premios.Add(premio);
+
+                }
+            }
+
+            return premios;
         }
     }
 }
