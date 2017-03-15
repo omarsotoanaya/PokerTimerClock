@@ -43,6 +43,7 @@
     <Compile Include="Blind.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigurationLoader.cs" />
+    <Compile Include="Premios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
