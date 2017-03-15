@@ -49,12 +49,12 @@ namespace PokerTimerClock
             if (_timer.IsEnabled)
             {
                 _timer.Stop();
-                btnStart.Content = "Start";
+                btnStart.Content = ">";
             }
             else
             {
                 _timer.Start();
-                btnStart.Content = "Stop";
+                btnStart.Content = "||";
             }
 
         }
@@ -68,13 +68,15 @@ namespace PokerTimerClock
             {
                 // Substract a second.
                 _time = _time.Subtract(new TimeSpan(0, 0, 1));
-                // Draw the current time.
-                lblClock.Content = string.Format(_time.ToString("mm':'ss"));
 
                 if (_time.TotalSeconds.Equals(0))
                 {
                     RestartTimer();
                 }
+
+                // Draw the current time and color.
+                UpdateClockColor();
+                lblClock.Content = string.Format(_time.ToString("mm':'ss"));
 
             };
         }
@@ -89,24 +91,70 @@ namespace PokerTimerClock
 
         private void GetRoundInfo(int currentRound)
         {
-            if(_conf.Blinds.Count() >= currentRound)
+            if (_conf.Blinds.Count() >= currentRound)
             {
                 lblSmallBlind.Content = _conf.Blinds[count].SmallBlind;
-                lblBigBlind.Content = _conf.Blinds[count].BigBlind;
-                lblAnte.Content = _conf.Blinds[count].Ante ?? string.Empty;
+                if (!string.IsNullOrEmpty(_conf.Blinds[count].Ante))
+                {
+                    lblBig.Content = "Big Blind";
+                    lblBigBlind.Content = _conf.Blinds[count].BigBlind;
+                    lblAnteTxt.Content = "Ante";
+                    lblAnte.Content = _conf.Blinds[count].Ante;
+                }
+                else
+                {
+                    lblBig.Content = string.Empty;
+                    lblAnteTxt.Content = "Big Blind";
+                    lblAnte.Content = _conf.Blinds[count].BigBlind;
+                }
                 count++;
             }
             // Get Next Round Info.
-            if(_conf.Blinds.Count() > count)
-            {  
+            if (_conf.Blinds.Count() > count)
+            {
                 lblNextSmall.Content = _conf.Blinds[count].SmallBlind;
                 lblNextBigBlind.Content = _conf.Blinds[count].BigBlind;
-                lblNextRound.Content = count+1;
+                lblNextRound.Content = count + 1;
                 lblNextAnte.Content = _conf.Blinds[count].Ante ?? string.Empty;
             }
 
         }
 
-       
+        private void UpdateClockColor()
+        {
+            var leftTime = (_conf.RoundTime - _time).TotalSeconds;
+            var totalTime = _conf.RoundTime.TotalSeconds;
+            var red = (leftTime / totalTime) * 255;
+            var green = (totalTime - leftTime) / totalTime * 255;
+            var blue = 0;
+
+            var color = Color.FromRgb((byte)red, (byte)green, (byte)blue);
+            var brush = new SolidColorBrush(color);
+
+            lblClock.Foreground = brush;
+
+
+        }
+
+        private void lblPlus_Click(object sender, RoutedEventArgs e)
+        {
+            var plus = 20;
+            var total = 50;
+
+            List<int> milista = new List<int>();
+            for(int plus1 = 1; plus1 < plus; plus1++)
+            {
+                total = (total*plus1) / 2;
+                var money = Math.Round(total / 100d)*100;
+                milista.Add((int)money);
+
+            }
+
+            foreach(var t in milista)
+            {
+
+            }
+            
+        }
     }
 }

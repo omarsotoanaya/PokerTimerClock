@@ -8,36 +8,32 @@
         Title="MainWindow" Height="817.482" Width="1184.725" WindowStartupLocation="CenterScreen" IsEnabled="True" Cursor="SizeAll" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MinWidth="500" MinHeight="450" WindowState="Maximized">
     <Grid Margin="0,0,2,-5" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="86*"/>
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="227*"/>
-            <ColumnDefinition Width="435*"/>
-            <ColumnDefinition Width="34*"/>
-            <ColumnDefinition Width="308*"/>
-            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="349"/>
+            <ColumnDefinition Width="Auto" MinWidth="485"/>
+            <ColumnDefinition Width="Auto" MinWidth="340"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="68*" />
-            <RowDefinition Height="304*"/>
-            <RowDefinition Height="62*"/>
-            <RowDefinition Height="77*"/>
-            <RowDefinition Height="281*"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto" MinHeight="185"/>
+            <RowDefinition Height="Auto" MinHeight="207"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnStart" Content="Start Clock" Margin="112,170,55,62" Click="button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="100" MinHeight="48" Grid.Row="4" Grid.Column="3" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Center" Height="48" HorizontalAlignment="Center" Width="268"/>
-        <Label x:Name="lblSmall" Content="Small Blind" RenderTransformOrigin="2.651,4.67" Margin="0,8,27,4" Grid.Row="2" FontSize="26.667" FontFamily="Tahoma" FontWeight="Bold" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="255"/>
-        <Label x:Name="lblBig" Content="Big Blind" Grid.Column="5" Margin="84,8,28,4" Grid.Row="2" FontSize="26.667" FontFamily="Tahoma" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblSmallBlind" Content="..." HorizontalAlignment="Right" Margin="0,13,112,0" Grid.Row="3" FontFamily="Tahoma" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Top" Height="42" Width="135" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Label x:Name="lblBigBlind" Content="..." Grid.Column="5" Margin="127,13,28,0" Grid.Row="3" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="26.667" FontWeight="Bold" Height="42" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblNextRound" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="94,40,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
-        <Label x:Name="lblNextSmall" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="94,79,0,0" Grid.Row="4" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma"/>
-        <Label x:Name="lblNextBigBlind" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="94,120,0,0" Grid.Row="4" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma"/>
-        <Label x:Name="lblSiguienteRonda" Content="Siguiente Ronda" HorizontalAlignment="Left" Margin="3,41,0,0" Grid.Row="4" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontFamily="Tahoma" Height="26" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Label x:Name="lblNextSmallTxt" Content="Small Blind" HorizontalAlignment="Left" Margin="3,79,0,0" Grid.Row="4" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" Grid.ColumnSpan="2" Height="24" Width="78" Grid.Column="1"/>
-        <Label x:Name="lblNextBigTxt" Content="Big Blind" HorizontalAlignment="Left" Margin="3,120,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Width="78" Grid.ColumnSpan="2" Height="24" Grid.Column="1"/>
-        <Label x:Name="lblAnteTxt" Content="Ante" Margin="166,19,212,0" Grid.Row="4" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Top" Grid.Column="3" FontSize="20" Height="34" HorizontalAlignment="Center" Width="57"/>
-        <Label x:Name="lblAnte" Content="" Grid.Column="3" Margin="315,10,0,0" Grid.Row="4" FontFamily="Tahoma" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label x:Name="lblClock" Content="..." FontSize="300" FontWeight="Bold" FontFamily="Tahoma" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="1" Margin="61,10,13,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" TextOptions.TextHintingMode="Fixed" Grid.ColumnSpan="7" Height="362"/>
-        <Label x:Name="lblAnteNextTxt" Content="Ante" HorizontalAlignment="Left" Margin="3,164,0,0" Grid.Row="4" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Top" Height="24" Width="38" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblNextAnte" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="94,164,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+        <Button x:Name="btnStart" Content="&gt;" Margin="0,56,97,0" Click="button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="100" MinHeight="48" Grid.Row="2" Grid.Column="2" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Top" Height="48" HorizontalAlignment="Right" Width="268" FontSize="32" FontFamily="Symbol"/>
+        <Label x:Name="lblSmall" Content="Small Blind" RenderTransformOrigin="2.651,4.67" Margin="94,9,0,0" Grid.Row="1" FontSize="32" FontFamily="Tahoma" FontWeight="Bold" HorizontalAlignment="Left" Grid.Column="1" Width="190" Height="64" VerticalAlignment="Top"/>
+        <Label x:Name="lblBig" Content="Big Blind" Grid.Column="2" Margin="0,9,165,0" Grid.Row="1" FontSize="32" FontFamily="Tahoma" FontWeight="Bold" Height="64" VerticalAlignment="Top" HorizontalAlignment="Right" Width="154"/>
+        <Label x:Name="lblSmallBlind" Content="..." Margin="92,56,0,0" Grid.Row="1" FontFamily="Tahoma" FontSize="96" FontWeight="Bold" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left"/>
+        <Label x:Name="lblBigBlind" Content="..." Grid.Column="2" Margin="165,58,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="96" FontWeight="Bold" HorizontalAlignment="Left"/>
+        <Label x:Name="lblNextRound" Content="..." Grid.Column="1" Margin="0,12,65,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" FontSize="13.333" HorizontalAlignment="Right"/>
+        <Label x:Name="lblNextSmall" Content="..." Grid.Column="1" Margin="0,51,65,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" FontSize="13.333" HorizontalAlignment="Right"/>
+        <Label x:Name="lblNextBigBlind" Content="..." Grid.Column="1" Margin="0,92,65,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" FontSize="13.333" HorizontalAlignment="Right"/>
+        <Label x:Name="lblSiguienteRonda" Content="Siguiente Ronda" HorizontalAlignment="Left" Margin="36,13,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" Grid.Column="1" Height="24" Width="109"/>
+        <Label x:Name="lblNextSmallTxt" Content="Small Blind" HorizontalAlignment="Left" Margin="36,51,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" Grid.Column="1" Height="24" Width="78"/>
+        <Label x:Name="lblNextBigTxt" Content="Big Blind" HorizontalAlignment="Left" Margin="36,92,0,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Grid.Column="1" Height="24" Width="64"/>
+        <Label x:Name="lblAnteTxt" Content="Big Blind" Margin="0,19,103,0" Grid.Row="1" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Top" Grid.Column="3" FontSize="32" HorizontalAlignment="Right" Height="49" Width="153"/>
+        <Label x:Name="lblAnte" Content="..." Grid.Column="3" Margin="91,58,0,0" Grid.Row="1" FontFamily="Tahoma" FontWeight="Bold" FontSize="96" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lblClock" Content="..." FontSize="300" FontWeight="Bold" FontFamily="Tahoma" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="1" Margin="77,0,80,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" TextOptions.TextHintingMode="Fixed" Grid.ColumnSpan="3" Foreground="Lime" Grid.Column="1" Height="329"/>
+        <Label x:Name="lblAnteNextTxt" Content="Ante" HorizontalAlignment="Left" Margin="36,136,0,0" Grid.Row="2" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Top" Grid.Column="1" Height="24" Width="38"/>
+        <Label x:Name="lblNextAnte" Content="..." Grid.Column="1" Margin="0,136,65,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" FontSize="13.333" HorizontalAlignment="Right"/>
+        <Button x:Name="lblPlus" Content="+" Grid.Column="3" HorizontalAlignment="Left" Margin="40,120,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" Height="48" FontSize="26.667" FontWeight="Bold" Click="lblPlus_Click"/>
     </Grid>
 </Window>
