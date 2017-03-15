@@ -14,9 +14,11 @@ namespace Business
         private const string _blindsTagName = "Blinds";
         private const string _roundTagName = "round";
         private const string _numberAttribute = "number";
+        private const string _anteAttribute = "ante";
         private const string _bigBlindAttribute = "bigBlind";
         private const string _smallBlindAttribute = "smallBlind";
         private const string _xPathRoundTime = "/root/roundTime";
+        private const string _xPathBlindsRound = "root/Blinds/round";
 
         private static Configuration configuration;
         #endregion
@@ -29,7 +31,7 @@ namespace Business
             XmlDocument _doc = new XmlDocument();
             _doc.Load(_xmlFile);
 
-            foreach (XmlElement node in _doc.SelectNodes("root/Blinds/round"))
+            foreach (XmlElement node in _doc.SelectNodes(_xPathBlindsRound))
             {
                 // Fill blind obj.
                 var blindObj = new Blind
@@ -37,7 +39,7 @@ namespace Business
                     RoundNumber = node.GetAttribute(_numberAttribute),
                     BigBlind = node.GetAttribute(_bigBlindAttribute),
                     SmallBlind = node.GetAttribute(_smallBlindAttribute),
-                    Ante = node.GetAttribute("ante")
+                    Ante = node.GetAttribute(_anteAttribute)
                 };
 
                 configuration.Blinds.Add(blindObj);
