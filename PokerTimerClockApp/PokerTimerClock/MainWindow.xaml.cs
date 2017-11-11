@@ -27,11 +27,11 @@ namespace PokerTimerClock
     {
         private TimeSpan _time;
         private DispatcherTimer _timer = new DispatcherTimer();
-        private int currentRound = 0;
+        private int _currentRound;
         private Configuration _conf;
-        private int count = 0;
-        private int vato;
-   
+        private int _count;
+        private int _vato;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -51,12 +51,12 @@ namespace PokerTimerClock
             if (_timer.IsEnabled)
             {
                 _timer.Stop();
-                btnStart.Content = ">";
+                btnStart.Content = "Start";
             }
             else
             {
                 _timer.Start();
-                btnStart.Content = "||";
+                btnStart.Content = "Stop";
             }
 
         }
@@ -87,37 +87,36 @@ namespace PokerTimerClock
         {
             _time = _conf.RoundTime;
             lblClock.Content = _time.ToString("mm':'ss");
-            currentRound++;
-            GetRoundInfo(currentRound);
+            _currentRound++;
+            GetRoundInfo(_currentRound);
         }
 
         private void GetRoundInfo(int currentRound)
         {
             if (_conf.Blinds.Count() >= currentRound)
             {
-                lblSmallBlind.Content = _conf.Blinds[count].SmallBlind;
-                if (!string.IsNullOrEmpty(_conf.Blinds[count].Ante))
+                lblSmallBlind.Content = _conf.Blinds[_count].SmallBlind;
+                if (!string.IsNullOrEmpty(_conf.Blinds[_count].Ante))
                 {
                     lblBig.Content = "Big Blind";
-                    lblBigBlind.Content = _conf.Blinds[count].BigBlind;
+                    lblBigBlind.Content = _conf.Blinds[_count].BigBlind;
                     lblAnteTxt.Content = "Ante";
-                    lblAnte.Content = _conf.Blinds[count].Ante;
+                    lblAnte.Content = _conf.Blinds[_count].Ante;
                 }
                 else
                 {
                     lblBig.Content = string.Empty;
                     lblAnteTxt.Content = "Big Blind";
-                    lblAnte.Content = _conf.Blinds[count].BigBlind;
+                    lblAnte.Content = _conf.Blinds[_count].BigBlind;
                 }
-                count++;
+                _count++;
             }
             // Get Next Round Info.
-            if (_conf.Blinds.Count() > count)
+            if (_conf.Blinds.Count() > _count)
             {
-                lblNextSmall.Content = _conf.Blinds[count].SmallBlind;
-                lblNextBigBlind.Content = _conf.Blinds[count].BigBlind;
-                lblNextRound.Content = count + 1;
-                lblNextAnte.Content = _conf.Blinds[count].Ante ?? string.Empty;
+                lblNextSmall.Content = _conf.Blinds[_count].SmallBlind;
+                lblNextBigBlind.Content = _conf.Blinds[_count].BigBlind;
+                lblNextAnte.Content = _conf.Blinds[_count].Ante ?? string.Empty;
             }
 
         }
@@ -141,34 +140,48 @@ namespace PokerTimerClock
         private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
             var load = LoadPremios();
-            if(load.Count()>0)
+            if (load.Count() > 0)
             {
                 dataGrid.ItemsSource = load;
             }
-            
+
         }
 
         private List<Premios> LoadPremios()
         {
-            vato = vato + 1;
-            var premios = new List<Premios>();
-            int x = 0;
-            int entrance = 50;
-            int total = vato * entrance;
+            int entranda = 50;
 
-            while (total >= 100)
+            int x = 0;
+            _vato = _vato + 1;
+            lblNumEntra.Content =  _vato;
+            lblTotalAcumulado.Content = _vato * entranda;
+            int totalAct = _vato * entranda;
+
+            var premios = new List<Premios>();
+            while (totalAct >= entranda)
             {
-                var premio = new Premios();
-                total = total / 2;
-                if (total >= 100)
+                x++;
+                int totalTemp;
+                Premios premio = new Premios();
+
+                if (totalAct == entranda)
                 {
-                    x++;
-                    total = (int)(Math.Round(total / 100d) * 100);
+                    totalTemp = totalAct;
                     premio.Lugar = x;
-                    premio.Cantidad = total;
-                    premios.Add(premio);
+                    premio.Cantidad = totalAct;
 
                 }
+                else
+                {
+                    totalTemp = totalAct / 2;
+                    totalTemp = (int)(Math.Round((totalTemp + 10) / 100d) * 100);
+                    premio.Lugar = x;
+                    premio.Cantidad = totalTemp;
+
+                }
+                totalAct = totalAct - totalTemp;
+                premios.Add(premio);
+           
             }
 
             return premios;

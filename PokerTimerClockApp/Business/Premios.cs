@@ -10,6 +10,6 @@ namespace Business
     {
         public int Lugar { get; set; }
         public int Cantidad { get; set; }
-
     }
+
 }
