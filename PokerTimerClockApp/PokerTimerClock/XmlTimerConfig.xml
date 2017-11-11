@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <roundTime>00:00:05</roundTime>
+  <roundTime>00:20:00</roundTime>
   <Blinds>
     <round number="1" smallBlind="1" bigBlind="2"></round>
     <round number="2" smallBlind="2" bigBlind="4"></round>

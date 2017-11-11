@@ -1,0 +1,11 @@
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\ConfigurationTest.dll
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\ConfigurationTest.pdb
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\Business.dll
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\Business.pdb
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\obj\Debug\ConfigurationTest.csprojResolveAssemblyReference.cache
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\obj\Debug\ConfigurationTest.dll
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\obj\Debug\ConfigurationTest.pdb
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\XmlTimerConfig.xml
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\PokerTimerClock.exe
+C:\Users\aleja_000\Documents\GitHub\pokertimerclock\PokerTimerClockApp\ConfigurationTest\bin\Debug\PokerTimerClock.pdb
