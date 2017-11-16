@@ -51,7 +51,7 @@ namespace PokerTimerClock
             if (_timer.IsEnabled)
             {
                 _timer.Stop();
-                btnStart.Content = "Started";
+                btnStart.Content = "Start";
             }
             else
             {
